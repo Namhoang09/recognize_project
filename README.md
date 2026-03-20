@@ -76,6 +76,7 @@ pip install -r requirements.txt
 ```
 
 2. Train model (nếu chưa có)
+
 🎤 Voice
 ```
 python train/voice_train/train.py
@@ -124,9 +125,9 @@ http://localhost:5000
 
 * Dữ liệu gửi qua SocketIO
 * Hiển thị realtime:
-    ** Tên
-    ** Confidence
-    ** Trạng thái nhận diện
+    * Tên
+    * Confidence
+    * Trạng thái nhận diện
 
 ---
 📊 Kết quả
