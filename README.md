@@ -37,21 +37,33 @@ RECOGNIZE_PROJECT/
 │
 ├── model/
 │   ├── face_model/         # Model nhận diện khuôn mặt
-│   └── voice_model/        # Model MLP cho giọng nói
+│   ├── voice_model/        # Model MLP cho giọng nói
+│   ├── gemini_bot.py       # Model API gemini
+│   └── system_utils.py     # Utility functions
 │
 ├── train/
 │   ├── face_train/         # Code train face
+|   │   ├── pretrain.py         
+|   │   ├── collect_faces.py        
+|   │   ├── train_faces.py
+|   │   └── face_inference.py    
 │   └── voice_train/        # Code train voice
+|       ├── pretrain.py         
+|       ├── collect_voices.py        
+|       ├── train_voices.py
+|       ├── stt_inference.py
+|       └── voice_inference.py 
 │
 ├── templates/
 │   └── index.html          # Giao diện web
 │
 ├── testing/                # Kết quả đánh giá
+│   ├── plot_chart.py
+│   └── plot_confusion_matrix.py 
 │
 ├── main.py                 # Chạy nhận diện
 ├── server_app.py           # Flask server
-├── gemini_bot.py           # (tuỳ chọn AI interaction)
-├── system_utils.py         # Utility functions
+├── check_module.txt        # Check API Gemini
 ├── requirements.txt
 └── README.md
 ```
@@ -59,90 +71,84 @@ RECOGNIZE_PROJECT/
 
 # 🚀 Cách chạy project
 1. Cài đặt thư viện
+```
 pip install -r requirements.txt
+```
 
 2. Train model (nếu chưa có)
 🎤 Voice
+```
 python train/voice_train/train.py
+```
 
 👤 Face
+```
 python train/face_train/train.py
+```
 
 3. Chạy server
+```
 python server_app.py
+```
 
 4. Chạy nhận diện
+```
 python main.py
+```
 
 5. Mở web
 
-Truy cập: http://localhost:5000
+Truy cập: 
+```
+http://localhost:5000
+```
 
 ---
 # 🧠 Cách hoạt động
 🎤 Voice Recognition
 
-Thu âm từ microphone
-
-Chia thành các đoạn (window)
-
-Loại bỏ silence bằng threshold
-
-Trích xuất feature
-
-Dự đoán bằng MLP
+* Thu âm từ microphone
+* Chia thành các đoạn (window)
+* Loại bỏ silence bằng threshold
+* Trích xuất feature
+* Dự đoán bằng MLP
 
 👤 Face Recognition
 
-Capture từ camera
-
-Encode khuôn mặt
-
-So sánh với dataset
-
-Trả về tên người
+* Capture từ camera
+* Encode khuôn mặt
+* So sánh với dataset
+* Trả về tên người
 
 🌐 Web
 
-Dữ liệu gửi qua SocketIO
-
-Hiển thị realtime:
-
-Tên
-
-Confidence
-
-Trạng thái nhận diện
+* Dữ liệu gửi qua SocketIO
+* Hiển thị realtime:
+    ** Tên
+    ** Confidence
+    ** Trạng thái nhận diện
 
 ---
 📊 Kết quả
 
-Confusion Matrix
-
-Accuracy
-
-FPS realtime
+* Confusion Matrix
+* Accuracy
+* FPS realtime
 
 (Xem trong thư mục testing/)
 
 ---
 📌 Tính năng nổi bật
 
-Nhận diện đa modal (voice + face)
-
-Realtime streaming
-
-Dễ mở rộng (AI chatbot, security system,…)
-
-Code tách module rõ ràng
+* Nhận diện đa modal (voice + face)
+* Realtime streaming
+* Dễ mở rộng (AI chatbot, security system,…)
+* Code tách module rõ ràng
 
 ---
 🔧 Hướng phát triển
 
-Kết hợp voice + face để tăng độ chính xác
-
-Thêm đăng nhập bảo mật
-
-Deploy lên server / cloud
-
-Tối ưu latency realtime
+* Kết hợp voice + face để tăng độ chính xác
+* Thêm đăng nhập bảo mật
+* Deploy lên server / cloud
+* Tối ưu latency realtime
