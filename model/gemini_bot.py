@@ -2,7 +2,7 @@ import google.generativeai as genai
 from datetime import datetime
 
 # CẤU HÌNH GEMINI
-GOOGLE_API_KEY = "AIzaSyBm4ijudeXHI3_K6MEzshWklKRdCTt1E3k"
+GOOGLE_API_KEY = "xxxx"
 genai.configure(api_key=GOOGLE_API_KEY)
 model = genai.GenerativeModel('gemini-flash-latest')
 
