@@ -1,39 +1,34 @@
-🎤👤 Voice & Face Recognition System (MLP + FaceID + Web)
-📌 Giới thiệu
+# 🎤👤 Voice & Face Recognition System (MLP + FaceID + Web)
+
+---
+# 📌 Giới thiệu
 
 Dự án này xây dựng hệ thống nhận diện giọng nói và khuôn mặt kết hợp, sử dụng:
 
-🎤 Voice Recognition: Mô hình MLP (Multi-Layer Perceptron)
-
-👤 Face Recognition: Dựa trên encoding (kiểu FaceID)
-
-🌐 Web Interface: Hiển thị kết quả realtime qua web (Flask + SocketIO)
+* 🎤 Voice Recognition: Mô hình MLP (Multi-Layer Perceptron)
+* 👤 Face Recognition: Dựa trên encoding (kiểu FaceID)
+* 🌐 Web Interface: Hiển thị kết quả realtime qua web (Flask + SocketIO)
 
 Ứng dụng có thể:
 
-Nhận diện người dùng qua giọng nói
+* Nhận diện người dùng qua giọng nói
+* Nhận diện người dùng qua khuôn mặt
+* Gửi kết quả lên giao diện web theo thời gian thực
 
-Nhận diện người dùng qua khuôn mặt
+---
+# ⚙️ Công nghệ sử dụng
 
-Gửi kết quả lên giao diện web theo thời gian thực
+* Python
+* Flask + Flask-SocketIO
+* NumPy
+* OpenCV
+* face_recognition
+* SoundDevice / Librosa
+* Scikit-learn (MLP)
 
-⚙️ Công nghệ sử dụng
-
-Python
-
-Flask + Flask-SocketIO
-
-NumPy
-
-OpenCV
-
-face_recognition
-
-SoundDevice / Librosa
-
-Scikit-learn (MLP)
-
-📂 Cấu trúc thư mục
+---
+# 📂 Cấu trúc thư mục
+```
 RECOGNIZE_PROJECT/
 │
 ├── dataset/
@@ -59,8 +54,10 @@ RECOGNIZE_PROJECT/
 ├── system_utils.py         # Utility functions
 ├── requirements.txt
 └── README.md
+```
+---
 
-🚀 Cách chạy project
+# 🚀 Cách chạy project
 1. Cài đặt thư viện
 pip install -r requirements.txt
 
@@ -79,11 +76,10 @@ python main.py
 
 5. Mở web
 
-Truy cập:
+Truy cập: http://localhost:5000
 
-http://localhost:5000
-
-🧠 Cách hoạt động
+---
+# 🧠 Cách hoạt động
 🎤 Voice Recognition
 
 Thu âm từ microphone
@@ -118,6 +114,7 @@ Confidence
 
 Trạng thái nhận diện
 
+---
 📊 Kết quả
 
 Confusion Matrix
@@ -128,6 +125,7 @@ FPS realtime
 
 (Xem trong thư mục testing/)
 
+---
 📌 Tính năng nổi bật
 
 Nhận diện đa modal (voice + face)
@@ -138,6 +136,7 @@ Dễ mở rộng (AI chatbot, security system,…)
 
 Code tách module rõ ràng
 
+---
 🔧 Hướng phát triển
 
 Kết hợp voice + face để tăng độ chính xác
